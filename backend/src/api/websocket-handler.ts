@@ -265,6 +265,7 @@ class WebsocketHandler {
     const rbfTransactions = Common.findRbfTransactions(newTransactions, deletedTransactions);
     const da = difficultyAdjustment.getDifficultyAdjustment();
     memPool.handleRbfTransactions(rbfTransactions);
+    const rbfChanges = rbfCache.getRbfChanges();
     const recommendedFees = feeApi.getRecommendedFee();
 
     this.wss.clients.forEach(async (client) => {
@@ -394,6 +395,11 @@ class WebsocketHandler {
               break;
             }
           }
+        }
+
+        const rbfChange = rbfChanges.map[client['track-tx']];
+        if (rbfChange) {
+          response['rbfInfo'] = rbfChanges.chains[rbfChange];
         }
       }
 
