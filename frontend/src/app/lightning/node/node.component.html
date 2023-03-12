@@ -3,13 +3,17 @@
   <ng-container *ngIf="!error">
     <h5 class="mb-0" style="color: #ffffff66" i18n="lightning.node">Lightning node</h5>
     <div class="title-container mb-2">
-      <h1 class="mb-0 text-truncate">{{ node.alias }}</h1>
-      <span class="tx-link">
+      <div class="d-flex justify-content-between align-items-center">
+        <h1 class="mb-0 text-truncate">{{ node.alias }}</h1>
+        <a [href]="'/liquidity/instant-claim/' + node.public_key" class="btn btn-primary btn-sm claim-btn">Claim</a>
+      </div>
+      <span class="tx-link justify-content-between align-items-center">
         <span class="node-id">
           <app-truncate [text]="node.public_key" [lastChars]="8" [link]="['/lightning/node' | relativeUrl, node.public_key]">
             <app-clipboard [text]="node.public_key"></app-clipboard>
           </app-truncate>
         </span>
+        <a [href]="'/liquidity/instant-claim/' + node.public_key" class="btn btn-primary btn-sm claim-btn-mobile">Claim</a>
       </span>
     </div>
   </ng-container>
