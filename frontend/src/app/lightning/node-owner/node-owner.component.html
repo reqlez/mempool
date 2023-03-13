@@ -9,7 +9,7 @@
     </div>
 
     <div *ngIf="nodeOwner.value === false">
-      <a [href]="'/liquidity/instant-claim/' + publicKey + '?alias=' + alias" class="btn btn-primary btn-sm">Claim</a>
+      <a [href]="'/login/lnnode?type=signup&pubkey=' + publicKey + '&alias=' + alias" class="btn btn-primary btn-sm">Claim</a>
     <div>
 
   </div>
