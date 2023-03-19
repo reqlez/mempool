@@ -84,6 +84,7 @@ import { SearchResultsComponent } from '../components/search-form/search-results
 import { TimestampComponent } from './components/timestamp/timestamp.component';
 import { ToggleComponent } from './components/toggle/toggle.component';
 import { GeolocationComponent } from '../shared/components/geolocation/geolocation.component';
+import { FiatShortenerPipe } from './pipes/fiat-shortener.pipe';
 
 @NgModule({
   declarations: [
@@ -110,6 +111,7 @@ import { GeolocationComponent } from '../shared/components/geolocation/geolocati
     Decimal2HexPipe,
     FeeRoundingPipe,
     FiatCurrencyPipe,
+    FiatShortenerPipe,
     ColoredPriceDirective,
     BlockchainComponent,
     MempoolBlocksComponent,
@@ -212,6 +214,7 @@ import { GeolocationComponent } from '../shared/components/geolocation/geolocati
     VbytesPipe,
     WuBytesPipe,
     FiatCurrencyPipe,
+    FiatShortenerPipe,
     CeilPipe,
     ShortenStringPipe,
     CapAddressPipe,
