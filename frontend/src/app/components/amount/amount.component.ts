@@ -19,7 +19,7 @@ export class AmountComponent implements OnInit, OnDestroy {
   currencySubscription: Subscription;
 
   @Input() satoshis: number;
-  @Input() digitsInfo = '1.8-8';
+  @Input() digitsInfo = '1.0-8';
   @Input() noFiat = false;
   @Input() addPlus = false;
   @Input() blockConversion: Price;
